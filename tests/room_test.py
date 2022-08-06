@@ -41,5 +41,33 @@ class TestRoom(unittest.TestCase):
         self.room.add_guest(self.guest_2)
         self.assertEqual(1, self.room.guest_count())
 
+    def test_remove_song(self):
+        self.room.remove_song(self.song_1)
+        self.assertEqual(0, self.room.song_count())
+
+    def test_remove_guest(self):
+        self.room.add_guest(self.guest_1)
+        self.room.remove_guest(self.guest_1)
+        self.assertEqual(0, self.room.guest_count())
+
+    def test_room_limit(self):
+        self.room.add_guest(self.guest_1)
+        self.room.add_guest(self.guest_2)
+        self.room.room_limit()
+        self.assertEqual(2, self.room.guest_count())
+        
 
 
+    # def test_party_time(self):
+    #     self.room.add_guest(self.guest_1)
+    #     self.room.add_guest(self.guest_2)
+    #     self.guest_1.buy_song(self.song_1)
+    #     self.guest_1.buy_song(self.song_2)
+    #     self.room.add_song(self.song_1)
+    #     self.room.add_song(self.song_2)
+    #     self.assertEqual(0, self.room.guest_count())
+    #     self.assertEqual(0, self.room.guest_count())
+    #     self.assertEqual(0, self.room.guest_count())
+    #     self.assertEqual(0, self.room.guest_count())
+    #     self.assertEqual(0, self.room.guest_count())
+    #     self.assertEqual(0, self.room.guest_count())
