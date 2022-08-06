@@ -11,6 +11,8 @@ class TestRoom(unittest.TestCase):
         self.room = Room("Room 1", 1000,)
         self.guest_1 = Guest("Adam", 50)
         self.guest_2 = Guest("Arwen", 100) 
+        self.guest_3 = Guest("Navi", 200)
+        self.guest_4 = Guest("Loki", 175)
         self.song_1 = Song("Under Pressure", "Queen", 5)
         self.song_2 = Song("Bat out of hell", "Meatloaf" ,15)
 
@@ -53,10 +55,10 @@ class TestRoom(unittest.TestCase):
     def test_room_limit(self):
         self.room.add_guest(self.guest_1)
         self.room.add_guest(self.guest_2)
-        self.room.room_limit()
-        self.assertEqual(2, self.room.guest_count())
+        self.room.add_guest(self.guest_3)
+        is_under = self.room.under_room_limit()
+        self.assertEqual(True,is_under)
         
-
 
     # def test_party_time(self):
     #     self.room.add_guest(self.guest_1)

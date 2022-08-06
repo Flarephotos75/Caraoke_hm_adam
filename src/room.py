@@ -28,12 +28,14 @@ class Room:
         self.customers.remove(customer)
 
     def under_room_limit(self): 
-        if self.customers < 10:
-            print("Come in")
+        if self.guest_count <= 2:
+            return True
+            
 
     def over_room_limit(self):
-        if self.customers >= 11:
-            print("Too busy")
+        if self.guest_count >= 2:
+            return
+            
 
     def party_time(self, song):
         self.add_guest()
