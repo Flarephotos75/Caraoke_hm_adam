@@ -5,3 +5,7 @@ class Guest:
 
     def reduce_money(self, amount):
         self.wallet -= amount
+
+    def buy_song(self, amount):
+        self.wallet -= amount.price
+

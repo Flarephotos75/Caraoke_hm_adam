@@ -13,5 +13,5 @@ class TestSong(unittest.TestCase):
     def test_song_artist(self):
         self.assertEqual("Queen", self.song.artist)
 
-    def test_song_length(self):
-        self.assertEqual(5, self.song.length)
+    def test_song_price(self):
+        self.assertEqual(5, self.song.price)

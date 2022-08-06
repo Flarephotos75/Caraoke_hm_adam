@@ -1,6 +1,6 @@
 class Song:
-    def __init__(self, name, artist, length):
+    def __init__(self, name, artist, price):
         self.name = name
         self.artist =artist
-        self.length = length
+        self.price = price
         
